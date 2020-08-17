@@ -8,6 +8,7 @@ const sass = require("gulp-sass");
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
+const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const jsMinify = require('gulp-js-minify');
 const browserSync = require('browser-sync').create();
@@ -58,8 +59,6 @@ const scriptsProd = function () {
     .pipe(dest(path.dest.js));
 };
 
-
-
 const minifyImages = function () {
   return src(path.src.img + '/*')
     .pipe(imagemin())
@@ -73,13 +72,17 @@ const minifyIcons = function () {
 
 const sassDev = function () {
   return src(path.src.styles + "/**/*.scss")
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: "compressed"
-    }).on("error", sass.logError))
-    .pipe(autoprefixer())
-    .pipe(concat('styles.min.css'))
-    .pipe(dest(path.dest.styles));
+  .pipe(sourcemaps.init())
+  .pipe(sass({
+    outputStyle: "compressed"
+  }).on("error", sass.logError))
+  .pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }))
+  .pipe(concat('styles.min.css'))
+  .pipe(cleanCSS())
+  .pipe(dest(path.dest.styles));
 };
 
 const sassProd = function(){
@@ -87,12 +90,13 @@ const sassProd = function(){
   .pipe(sass({
     outputStyle: "compressed"
   }).on("error", sass.logError))
-  .pipe(autoprefixer())
+  .pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }))
   .pipe(concat('styles.min.css'))
   .pipe(dest(path.dest.styles));
 };
-
-
 
 const defaultTask = function () {
   minifyImages();
@@ -130,3 +134,4 @@ const prodcutionTask = function(cb){
 
 exports.default = defaultTask;
 exports.prod = prodcutionTask;
+exports.sassD = sassDev;
