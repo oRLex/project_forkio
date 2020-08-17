@@ -11,6 +11,7 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const jsMinify = require('gulp-js-minify');
+const fileinclude = require('gulp-file-include');
 const browserSync = require('browser-sync').create();
 
 
