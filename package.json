@@ -1,0 +1,31 @@
+{
+  "name": "forkio-project",
+  "version": "1.0.0",
+  "description": "Project Forkio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oRLex/orlex.github.io.git"
+  },
+  "author": "coder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oRLex/orlex.github.io/issues"
+  },
+  "homepage": "https://github.com/oRLex/orlex.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-js-minify": "0.0.3",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
