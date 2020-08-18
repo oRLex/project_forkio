@@ -41,7 +41,7 @@ const del = function(){
 const serve = function () {
   browserSync.init({
     server: {
-      baseDir: './',
+      baseDir: './dist',
     },
     port: 5500,
     browser: 'firefox',
@@ -99,7 +99,17 @@ const sassProd = function(){
   .pipe(dest(path.dest.styles));
 };
 
+const htmlInclude = function(){
+  return src(['./index.html'])
+  .pipe(fileinclude({
+    prefix: '@@',
+    basepath: '@file'
+  }))
+  .pipe(dest(path.dest.server));
+};
+
 const defaultTask = function () {
+  htmlInclude();
   minifyImages();
   minifyIcons();
   sassDev();
@@ -107,7 +117,11 @@ const defaultTask = function () {
   serve();
 
   watch("./**/*.html").on('change', function () {
+    htmlInclude();
+
     browserSync.reload();
+    console.log('watch html');
+
   });
 
   watch(path.src.styles + "/**/*.scss").on('change', function () {
