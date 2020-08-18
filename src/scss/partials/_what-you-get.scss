@@ -1,0 +1,39 @@
+.get{
+  background-color: $bg-color-grey;
+  &__title{
+    font-weight: bold;
+    font-size: 4.8rem;
+    color: $lavender-purple;
+  }
+  &__img{
+    width: 70rem;
+  }
+  &__content-wrap{
+    display: flex;
+    flex-direction: column;
+  }
+  &__content-item{
+    display: flex;
+    width: 52.5rem;
+
+    margin-top: 3.4rem;
+
+  }
+  &__content-img-wrap{
+    width: 10rem;
+    margin-right: 2.3rem;
+  }
+  &__content-img{
+
+  }
+
+  &__content-title{
+    font-size: 1.6rem;
+    color: $mine-shaft;
+
+  }
+  &__content-disc{
+    font-size: 1.4rem;
+    color:$oslo-gray;
+  }
+}
