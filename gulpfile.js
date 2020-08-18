@@ -23,6 +23,7 @@ const path = {
     img: './src/assets/img',
     icons: './src/assets/icons/',
     html: './src/templates'
+
   },
   dest: {
     server: './dist/',
@@ -36,7 +37,6 @@ const path = {
 
 const del = function(){
  return  delFolder.sync([path.dest.server]);
- 
 };
 
 const serve = function () {
@@ -117,10 +117,8 @@ const defaultTask = function () {
   scriptsDev();
   serve();
 
-  watch("./**/*.html").on('change', function () {
+  watch(path.src.html +"/**/*.html").on('change', function () {
     browserSync.reload();
-    console.log('watch html');
-
   });
   watch(path.src.html + "/**/*.html").on('change', function () {
       htmlInclude();
@@ -128,16 +126,19 @@ const defaultTask = function () {
       console.log('watch html');
     });
 
+  watch(path.src.html + "/**/*.html").on('change', function () {
+        htmlInclude();
+        browserSync.reload();
+      });
+
   watch(path.src.styles + "/**/*.scss").on('change', function () {
     sassDev();
     browserSync.reload();
-    console.log('watch scss');
   });
 
   watch(path.src.js + "/**/*.js").on('change', function () {
     scriptsDev();
     browserSync.reload();
-    console.log('watch js');
   });
 };
 
@@ -153,4 +154,3 @@ const prodcutionTask = function(cb){
 
 exports.default = defaultTask;
 exports.prod = prodcutionTask;
-exports.sassD = sassDev;

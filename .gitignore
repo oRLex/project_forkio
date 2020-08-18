@@ -106,3 +106,4 @@ typings/
 # Package-lock
 /package-lock.json
 
+dist/**/*.*
