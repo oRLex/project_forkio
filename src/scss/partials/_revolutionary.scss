@@ -1,0 +1,71 @@
+.revolution{
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 7rem;
+  &__title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 5.4rem;
+    text-transform: uppercase;
+    color: $title-revol;
+    @media (max-width: 768px) {
+    font-size: 4.2rem;
+    }
+    @media (max-width: 394px) {
+      font-size: 2.6rem;
+    }
+  }
+  &__content{
+    margin-top: 3.5rem;
+    font-size: 2.1rem;
+    text-align: center;
+    color: $mine-shaft;
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.activity{
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media (max-width: 768px) {
+    margin-top: 2.4rem;
+  }
+  @media (max-width: 394px) {
+    margin-top: 3.4rem;
+  }
+  &__item{
+    margin-right: 1rem;
+    display: flex;
+    border-radius: 0.3rem;
+    border: $border-active;
+    &:last-child{
+      margin-right: 0;
+      @media (max-width: 394px) {
+        margin-top: 2rem;
+      }
+    }
+  }
+ &__link{
+   border-top-left-radius: 0.3rem;
+   border-bottom-left-radius: 0.3rem;
+   font-weight: bold;
+   border-right: $border-active;
+   vertical-align: middle;
+   color: $baltic-sea;
+   background-color: $bg-color-grey;
+   text-decoration: none;
+   @include active-button;
+ }
+  &__svg{
+    vertical-align: middle;
+  }
+  &__numder{
+    @include active-button;
+  }
+}
