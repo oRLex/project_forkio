@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.min.css">
   <title>Document</title>
 </head>
+
 <body>
-  <header class="hero-bg">
-    @@include('./src/templates/header.html')
+  <div class="hero-bg">
+    <header>
+      @@include('./src/templates/header.html')
+    </header>
     @@include('./src/templates/hero.html')
-  </header>
+  </div>
+  <span class="hero__trial">Unlimited 30-Days Trial Period</span>
+
 
   <main>
     @@include('./src/templates/about.html')
@@ -18,4 +24,5 @@
 
   <script src="./js/scripts.min.js"></script>
 </body>
+
 </html>
