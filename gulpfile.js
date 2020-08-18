@@ -35,7 +35,6 @@ const path = {
 
 const del = function(){
  return  delFolder.sync([path.dest.server]);
- 
 };
 
 const serve = function () {
@@ -118,22 +117,17 @@ const defaultTask = function () {
 
   watch("./**/*.html").on('change', function () {
     htmlInclude();
-
     browserSync.reload();
-    console.log('watch html');
-
   });
 
   watch(path.src.styles + "/**/*.scss").on('change', function () {
     sassDev();
     browserSync.reload();
-    console.log('watch scss');
   });
 
   watch(path.src.js + "/**/*.js").on('change', function () {
     scriptsDev();
     browserSync.reload();
-    console.log('watch js');
   });
 };
 
@@ -149,4 +143,3 @@ const prodcutionTask = function(cb){
 
 exports.default = defaultTask;
 exports.prod = prodcutionTask;
-exports.sassD = sassDev;
