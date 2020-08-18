@@ -22,7 +22,7 @@ const path = {
     js: './src/js',
     img: './src/assets/img',
     icons: './src/assets/icons/',
-    html: '.src/templates'
+    html: './src/templates'
   },
   dest: {
     server: './dist/',
