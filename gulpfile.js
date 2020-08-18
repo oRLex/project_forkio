@@ -21,7 +21,8 @@ const path = {
     styles: './src/scss',
     js: './src/js',
     img: './src/assets/img',
-    icons: './src/assets/icons/'
+    icons: './src/assets/icons/',
+    html: '.src/templates'
   },
   dest: {
     server: './dist/',
@@ -115,7 +116,7 @@ const defaultTask = function () {
   scriptsDev();
   serve();
 
-  watch("./**/*.html").on('change', function () {
+  watch(path.src.html +"/**/*.html").on('change', function () {
     htmlInclude();
     browserSync.reload();
   });
