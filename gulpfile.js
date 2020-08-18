@@ -22,7 +22,11 @@ const path = {
     js: './src/js',
     img: './src/assets/img',
     icons: './src/assets/icons/',
+<<<<<<< HEAD
      html: './src/templates'
+=======
+    html: './src/templates'
+>>>>>>> eaa8f5f0b948b62f69590039c51864d73fd0e06f
   },
   dest: {
     server: './dist/',
@@ -116,7 +120,12 @@ const defaultTask = function () {
   scriptsDev();
   serve();
 
+<<<<<<< HEAD
   watch("./**/*.html").on('change', function () {
+=======
+  watch(path.src.html +"/**/*.html").on('change', function () {
+    htmlInclude();
+>>>>>>> eaa8f5f0b948b62f69590039c51864d73fd0e06f
     browserSync.reload();
   });
 
