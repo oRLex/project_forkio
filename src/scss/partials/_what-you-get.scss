@@ -3,9 +3,14 @@
   background-color: $bg-color-grey;
   padding-top: 10rem;
   padding-bottom: 3.3rem;
-  padding-left: 9rem;
-  &__wrab-header{
 
+  @media (max-width:1130px) {
+    padding: 0;
+  }
+  @media (max-width:768px) {
+    background-color: transparent;
+  }
+  &__wrab-header{
     //display: flex;
     //flex-direction: column;
     @media (max-width:1130px) {
@@ -17,7 +22,9 @@
   &__wrap{
     display: flex;
     justify-content: space-between;
+
     @media (max-width:1130px) {
+      justify-content: center;
       flex-wrap: wrap;
     }
   }
@@ -33,7 +40,11 @@
     &--top{
       display: none;
       @media (max-width:1130px) {
+        margin-bottom: 5rem;
         display: block;
+      }
+      @media (max-width:768px) {
+        font-size: 4.2rem;
       }
     }
   }
@@ -43,6 +54,11 @@
   &__content-wrap{
     display: grid;
     flex-direction: column;
+    @media (max-width:1130px) {
+      margin: 0 auto;
+      padding: 0 10px;
+      max-width: 90.5rem;
+    }
 
   }
   &__content-item{
