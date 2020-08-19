@@ -1,18 +1,13 @@
 .get{
-  //overflow-x: hidden;
   background-color: $bg-color-grey;
-  padding-top: 10rem;
-  padding-bottom: 3.3rem;
-
+  padding: 10rem 0 3.3rem 9rem;
   @media (max-width:1130px) {
-    padding: 0;
+    padding-left: 0;
   }
   @media (max-width:768px) {
     background-color: transparent;
   }
   &__wrab-header{
-    //display: flex;
-    //flex-direction: column;
     @media (max-width:1130px) {
       width: 100%;
      display: flex;
@@ -29,6 +24,7 @@
     }
   }
   &__title{
+    text-align: center;
     font-weight: bold;
     font-size: 4.8rem;
     color: $lavender-purple;
@@ -46,10 +42,13 @@
       @media (max-width:768px) {
         font-size: 4.2rem;
       }
+      @media (max-width:436px) {
+        font-size: 3.2rem;
+      }
     }
   }
   &__img{
-    width: 70rem;
+    max-width: 70rem;
   }
   &__content-wrap{
     display: grid;
@@ -65,8 +64,12 @@
     display: grid;
     grid-template-columns: 11.5rem 1fr;
     grid-column-gap: 2.4rem;
-    //width: 52.5rem;
     margin-bottom: 3.4rem;
+    @media (max-width:436px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
   }
   &__content-img-wrap{
@@ -80,17 +83,27 @@
     text-align: center;
   }
   &__content-text{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media (max-width:436px) {
+      align-items: center;
+    }
   }
   &__content-title{
     margin-bottom: 1.1rem;
     font-size: 1.6rem;
     color: $mine-shaft;
+    @media (max-width:436px) {
+      margin-top: 2.7rem;
+    }
   }
   &__content-disc{
     font-size: 1.4rem;
     color:$oslo-gray;
+    @media (max-width:436px) {
+      text-align: center;
+    }
   }
 }

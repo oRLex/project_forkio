@@ -42,7 +42,14 @@
         </div>
         <div class="get__wrab-header">
             <h2 class="get__title get__title--left">&lt;Here is what you get&gt;</h2>
-            <img src="assets/img/editor%201.png" alt="editor" class="get__img">
+<!--            <img srcset="assets/img/editor%201.png 1024w, assets/img/editor-mobile.png 468w"-->
+<!--                 sizes="(max-width:700px) 600px, (max-width:317px) 50vw, 700px"-->
+<!--                    src="assets/img/editor%201.png" alt="editor" class="get__img">-->
+            <picture class="get__img">
+                <source media="(min-width: 694px)" srcset="assets/img/editor%201.png">
+                <source media="(max-width: 694px)" srcset="assets/img/editor-mobile.png">
+                <img src="assets/img/editor%201.png">
+            </picture>
         </div>
     </div>
 </section>
