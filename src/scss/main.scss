@@ -21,11 +21,39 @@
     background-size: cover;
   }
 
-  .section-title,
-  .container {
+  .section-title {
     position: relative;
     z-index: 10;
     margin-bottom: 8.2rem;
+  }
+  .container{
+    position: relative;
+    z-index: 10;
+  }
+
+  &__description{
+    position: relative;
+    margin: 0 auto;
+    z-index: 10;
+    max-width: 88.7rem;
+  }
+  &__description-text{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    color: $mountain-mist;
+    text-align: center;
+    margin-bottom: 18.5px;
+  }
+  &__description-line{
+    border: 0;
+    background-color: $salt-box;
+    max-width: 78rem;
+    width: 100%;
+    margin: 0 auto;
+    height: 0.2rem;
   }
 }
 
@@ -37,10 +65,34 @@
   font-family: "Montserrat";
 }
 
+// 
+// TODO: create mixin
+// 
 .testimonials {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(31.5rem, 1fr));
-  grid-template-rows: repeat(2, 1fr);
-  gap: 11.6rem 8.7rem;
+  @include grid(3, 31.5rem, 11.6rem, 8.7rem);
   justify-items: center;
+  margin-bottom: 118.5px;
+  @media (max-width: 115rem) {
+    @include grid(false, 31.5rem, 11.6rem, 8.7rem);
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 14.4rem;
+  }
+
+
+  &__item-text{
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Lato;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
 }

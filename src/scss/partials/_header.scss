@@ -1,17 +1,29 @@
 .header{ 
   margin-top: 3.1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   &__logo{
     text-decoration: none;
     display: flex;
     align-items: center;
+    &:hover{
+      .header__logo-img{
+        background-image: url("/assets/icons/logo-hover 1.png");
+      }
+      .header__logo-name{
+        color: #ffffff;
+      }
+    }
   }
   &__logo-img{
     margin-right: 1.7rem;
     width: 4.3rem;
     height: 4.1rem;
+    background-image: url("/assets/icons/Logo 1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   &__logo-name{
     font-size: 2.4rem;
@@ -19,11 +31,12 @@
     color: $lavender-purple;
     font-weight: bold;
   }
-  &__actions{
-    display: flex;
-    align-items: center;
+  
 
     .menu{
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
       margin-right: 4.8rem;
       &__item{
         font-size: 1.6rem;
@@ -31,20 +44,92 @@
         color: $lavender-purple;
         text-decoration: none;
         margin-right: 4.8rem;
+        &:hover{
+          color: #ffffff; 
+        }
         &:last-child{
           margin-right: 0;
         }
       }
+      &__btn--toggle{
+        display: none;
+      }
+    }
+  
+  &__btn{
+    padding: 0.8rem 2.5rem;
+  }
+}
+
+
+@media (max-width: 843px){
+  header{
+    background-color: $baltic-sea;
+    position: relative;
+  }
+  .header{
+    margin-top: 0;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .menu{
+      flex: 1 0 100%;
+      order: 4;
+      justify-content: center;
+      &__item{
+        margin-right: 2rem;
+      }
     }
   }
-  &__btn{
-    text-decoration: none;
-    border-radius: 2rem;
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 1.1rem 2rem;
-    background-color: $lavender-purple;
-    
+}
+
+@media (max-width: 740px){
+  .header{
+    flex-wrap: nowrap;
+    &__logo-name{
+      display: none;
+    }
+    .menu{
+      display: none;
+      position: absolute;
+      bottom: -23.3rem;
+      left: 0;
+      // transform: translateX(-50%);
+      width: 100%;
+      padding: 0 1rem;
+      text-align: left;
+      background-color: #333333;
+      &.active{
+        display: block;
+        z-index: 12;
+      }
+      &__btn--toggle{
+        display: block;
+        background-image: url("/assets/icons/hamburger.svg");
+        width: 2.6rem;height: 2.1rem;
+        order: 3;
+      }
+      &__item{
+        margin-right: 0;
+        display: block;
+        width: 100%;
+        color: #ffffff;
+        line-height: 5.3rem;
+        font-size: 2.6rem;
+        border-bottom: 0.3rem solid #3B3B3B;
+        border-top: 0.3rem solid #3B3B3B;
+        &:first-child{
+          border-top: 0;
+        }
+        &:hover{
+          color: $lavender-purple;
+          border-left: 0.8rem solid $lavender-purple;
+        }
+      }
+    }
+    &__btn{
+      order: 2;
+    }
   }
 }
