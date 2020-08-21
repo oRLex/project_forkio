@@ -1,8 +1,17 @@
 .price{
-  background: linear-gradient(0deg, rgb(74,49,79), rgb(74,49,79)), url(../assets/img/bg-prise.png);
+  //overflow: hidden;
+  background: linear-gradient(45deg, rgba(74,49,79,0.8), rgba(74,49,79, 0.8)), url(/../assets/img/bg-prise.png) no-repeat;
+  //background: url(/../assets/img/bg-prise.png) no-repeat;
+
+  background-size: cover;
   padding-top: 8.8rem;
-  padding-bottom: 10rem;
+  padding-bottom: 9rem;
+  @media (max-width:648px) {
+    padding-bottom: 3rem;
+    padding-top: 1.4rem;
+  }
   &__title{
+    z-index: 100;
     font-weight: bold;
     font-size: 4.8rem;
     text-align: center;
@@ -10,34 +19,31 @@
     @media (max-width:1130px) {
       font-size: 4.2rem;
     }
+    @media (max-width:648px) {
+      font-size: 2.8rem;
+    }
   }
 }
 
 .card{
+  margin-top: 6.1rem;
+  display: grid;
+  grid-template-columns: 25.7rem 25.7rem 30rem 25.7rem;
+  grid-column-gap: 0.5rem;
   @media (max-width:1130px) {
     margin-top: 0;
+    grid-template-columns: 300px 300px;
+    justify-content:center;
+    grid-row-gap: 3rem;
   }
-  margin-top: 6.1rem;
-  //display: grid;
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-
-
-  //grid-template-columns: 25.7rem 25.7rem 30rem 25.7rem;
-  //grid-column-gap: 0.5rem;
-  //@media (max-width:1130px) {
-  //  grid-template-columns: 300px 300px;
-  //}
-  //@media (max-width:634px) {
-  //  margin-top: 3.2rem;
-  //  grid-template-columns: minmax(250px, 300px);
-  //  grid-row-gap: 1.8rem;
-  //}
+  @media (max-width:648px) {
+    grid-template-columns: 300px;
+    justify-content:center;
+    grid-row-gap: 1.7rem;
+    margin-top: 3rem;
+  }
   &__item{
-    width: 25.7rem;
-    margin-right: 0.7rem;
-    margin-left: 0.7rem;
+    width: 25.6rem;
     margin-top: 5rem;
     height: 46rem;
     background: rgba(255,255 ,255,0.1);
@@ -46,17 +52,12 @@
     align-items: center;
     justify-content: space-between;
     @media (max-width:1130px) {
-      margin-top: 6.5rem;
+      justify-self: end;
     }
-    @media (max-width:634px) {
+    @media (max-width:648px) {
       margin-top: 0;
+      justify-self: center;
     }
-    &:first-child{
-      @media (max-width:876px) {
-        margin-left: 5rem;
-      }
-    }
-
   }
   &__title{
     font-size: 2.4rem;
@@ -110,12 +111,9 @@
 
 .active{
   width: 30rem;
-  @media (max-width:1130px) {
-    margin-top: 3rem;
-  }
   margin-top: 0;
   height: 56rem;
-  background-color: rgba(70, 48, 72, 0.84);;
+  background-color: rgba(70, 48, 72, 0.84);
   &__title{
     padding: 4.3rem 0;
   }
