@@ -2,3 +2,9 @@
   padding: 0.5rem 0.7rem;
   font-size: 1.5rem;
 }
+
+@mixin item-center ($direction){
+  display: flex;
+  flex-direction: column;
+  $direction: center;
+}
