@@ -1,0 +1,126 @@
+.hero-bg {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/img/header.png");
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+  }
+}
+
+.hero {
+  margin-top: 11.5rem;
+  height: 100%;
+
+
+  &__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  &__content-heading {
+    font-size: 8.2rem;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 1.9rem;
+    font-family: $primeFont;
+  }
+
+  &__content-text {
+    font-size: 3rem;
+    color: $lavender-purple;
+    margin-bottom: 1.9rem;
+    font-family: $primeFont;
+    font-weight: 200;
+  }
+
+  &__content-subtext {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $oslo-gray;
+    font-family: $primeFont;
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: -2rem;
+    right: 50%;
+    transform: translateX(50%);
+    display: block;
+    color: #FFFFFF;
+    padding: 1.3rem 3.1rem;
+    background-color: $lavender-purple;
+    border-radius: 3rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2.1rem;
+    text-align: center;
+    min-width: 29rem;
+  }
+
+  &__trial {
+    display: block;
+    text-align: center;
+    margin-top: 4.8rem;
+    margin-bottom: 3.3rem;
+    font-weight: normal;
+    font-size: 1.4rem;
+    color: $oslo-gray;
+    font-family: $primeFont;
+  }
+}
+
+@media (max-width: 882px) {
+  .hero {
+    margin-top: 6.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    margin-top: 5rem;
+
+    &__btn {
+      font-size: 1.5rem;
+    }
+
+    &__content-heading {
+      font-size: 4.8rem;
+    }
+
+    &__content-text {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+    }
+
+    &__content-subtext {
+      font-size: 1.4rem;
+    }
+
+    &__trial {
+      margin-top: 3.55rem;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (min-width: 421px) and (max-width: 670px) {
+  .hero {
+    &__btn {
+      font-size: 1.5rem;
+    }
+  }
+}

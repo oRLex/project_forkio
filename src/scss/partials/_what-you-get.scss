@@ -1,101 +1,126 @@
-.get{
+.get {
   background-color: $bg-color-grey;
   padding: 10rem 0 3.3rem 9rem;
   display: flex;
   justify-content: space-between;
+
   @media (max-width:1130px) {
     padding-left: 0;
     justify-content: center;
     flex-wrap: wrap;
   }
+
   @media (max-width:992px) {
 
     background-color: transparent;
   }
+
   @media (max-width:480px) {
     padding-top: 0;
   }
 
-  &__wrab-header{
+  &__wrab-header {
     @media (max-width:1130px) {
       width: 100%;
-     display: flex;
+      display: flex;
       justify-content: flex-end;
     }
   }
 
-  &__title{
+  &__title {
     text-align: center;
     font-weight: bold;
     font-size: 4.8rem;
     color: $lavender-purple;
-    &--left{
+    font-family: $primeFont;
+
+
+    &--left {
       @media (max-width:1130px) {
         display: none;
       }
     }
-    &--top{
+
+    &--top {
       display: none;
+
       @media (max-width:1130px) {
         margin-bottom: 5rem;
         display: block;
       }
+
       @media (max-width:992px) {
         font-size: 4.2rem;
       }
+
       @media (max-width:480px) {
         font-size: 3.2rem;
       }
     }
   }
-  &__img{
+
+  &__img {
     max-width: 70rem;
   }
-  &__content-wrap{
+
+  &__content-wrap {
     display: grid;
+
     @media (max-width:1130px) {
       margin: 0 auto;
       padding: 0 10px;
       max-width: 90.5rem;
     }
   }
-  &__content-item{
+
+  &__content-item {
     display: grid;
     grid-template-columns: 11.5rem 1fr;
     grid-column-gap: 2.4rem;
     margin-bottom: 3.4rem;
+
     @media (max-width:480px) {
       @include item-center (align-items);
     }
   }
-  &__content-img-wrap{
+
+  &__content-img-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  &__content-img{
+
+  &__content-img {
     vertical-align: middle;
     display: inline-block;
     text-align: center;
   }
 
-  &__content-text{
+  &__content-text {
+    font-family: $primeFont;
+
     @include item-center (justify-content);
+
     @media (max-width:480px) {
       align-items: center;
     }
   }
-  &__content-title{
+
+  &__content-title {
     margin-bottom: 1.1rem;
     font-size: 1.6rem;
     color: $mine-shaft;
+
+
     @media (max-width:480px) {
       margin-top: 2.7rem;
     }
   }
-  &__content-disc{
+
+  &__content-disc {
     font-size: 1.4rem;
-    color:$oslo-gray;
+    color: $oslo-gray;
+
     @media (max-width:480px) {
       text-align: center;
     }

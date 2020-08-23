@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,200,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/styles.min.css">
   <title>Document</title>
 </head>
+
 <body>
-  <header>
-    <p>header</p>
-  </header>
+  <div class="hero-bg">
+    <header>
+      <div class="container header">
+  <a href="#" class="header__logo">
+    <div class="header__logo-img"></div>
+    <h2 class="header__logo-name">ForkIO</h2>
+  </a>
+  <nav class="menu">
+    <a href="#" class="menu__item">
+      <span>Overview</span>
+    </a>
+    <a href="#" class="menu__item">
+      <span>About Fork</span>
+    </a>
+    <a href="#" class="menu__item">
+      <span>Buying Options</span>
+    </a>
+    <a href="#" class="menu__item">
+      <span>Support</span>
+    </a>
+  </nav>
+  <a href="#" class="menu__btn--toggle"></a>
+  <a href="#" class="header__btn btn__prime">Buy Now</a>
+</div>
+    </header>
+    <section class="hero container">
+  <div class="hero__content">
+    <h1 class="hero__content-heading">Fork App</h1>
+    <p class="hero__content-text">A real gamechanger in the world of web development</p>
+    <p class="hero__content-subtext">v. 2.8 For Mac and Windows</p>
+  </div>
+  <div class="hero__action">
+    <a href="#" class="hero__btn btn__prime">Download For Free Now</a>
+  </div>
+</section>
+  </div>
+  <span class="hero__trial">Unlimited 30-Days Trial Period</span>
 
   <main>
     <section class="revolution container">
@@ -78,8 +116,61 @@
             </picture>
         </div>
 </section>
-    
-
+    <section class="about">
+  <h2 class="section-title">People Are Talking About Fork</h2>
+  <div class="container">
+    <div class="testimonials">
+      <div class="testimonials__item">
+        <img src="/assets/icons/logo1.png" class="testimonials__item-logo" />
+        <p class="testimonials__item-text">
+          Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id dignissim magna. Sed varius urna
+          et pulvinar venenatis.
+        </p>
+      </div>
+      <div class="testimonials__item">
+        <img src="/assets/icons/logo2.png" class="testimonials__item-logo" />
+        <p class="testimonials__item-text">
+          Donec euismod dolor ut ultricies consequat. Vivamus urna ipsum, rhoncus molestie neque ac, mollis eleifend
+          nibh.
+        </p>
+      </div>
+      <div class="testimonials__item">
+        <img src="/assets/icons/logo3.png" class="testimonials__item-logo" />
+        <p class="testimonials__item-text">
+          In efficitur in velit et tempus. Duis nec odio dapibus, suscipit erat fringilla, imperdiet nibh. Morbi tempus
+          auctor felis ac vehicula.
+        </p>
+      </div>
+      <div class="testimonials__item">
+        <img src="/assets/icons/logo4.png" class="testimonials__item-logo" />
+        <p class="testimonials__item-text">
+          Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id dignissim magna. Sed varius urna
+          et pulvinar venenatis.
+        </p>
+      </div>
+      <div class="testimonials__item">
+        <img src="/assets/icons/logo5.png" class="testimonials__item-logo" />
+        <p class="testimonials__item-text">
+          Praesent ut eros tristique, malesuada lectus vel, lobortis massa. Nulla faucibus lorem id arcu consequat
+          faucibus.
+        </p>
+      </div>
+      <div class="testimonials__item">
+        <img src="/assets/icons/logo6.png" class="testimonials__item-logo" alt="">
+        <p class="testimonials__item-text">
+          Fusce pharetra erat id odio blandit, nec pharetra eros venenatis. Pellentesque porttitor cursus massa et
+          vestibulum.
+        </p>
+      </div>
+    </div>
+    <div class="about__description">
+      <p class="about__description-text">Duis lobortis arcu sed arcu tincidunt feugiat. Nulla nisi mauris, facilisis
+        vitae aliquet id, imperdiet quis nibh. Donec eget elit eu libero tincidunt consequat nec elementum orci. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+      <hr class="about__description-line">
+    </div>
+  </div>
+</section>
     <section class="price">
     <div class="container">
         <p class="price__title">Fork Subscription Pricing</p>
@@ -116,4 +207,5 @@
 
   <script src="js/scripts.min.js"></script>
 </body>
+
 </html>

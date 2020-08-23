@@ -1,66 +1,80 @@
-.revolution{
+.revolution {
   margin-top: 6rem;
   @include item-center(align-items);
   margin-bottom: 7rem;
-  &__title{
+
+  &__title {
+    font-family: $primeFont;
     font-weight: bold;
     font-size: 5.4rem;
     @include uppercase-center-text;
     color: $title-revol;
+
     @media (max-width: 992px) {
-    font-size: 4.2rem;
+      font-size: 4.2rem;
     }
+
     @media (max-width: 480px) {
       font-size: 2.6rem;
     }
   }
-  &__content{
+
+  &__content {
+    font-family: $secondFont;
     margin-top: 3.5rem;
     font-size: 2.1rem;
     text-align: center;
     color: $mine-shaft;
+
     @media (max-width: 768px) {
       font-size: 1.4rem;
     }
   }
 }
 
-.activity{
+.activity {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   @media (max-width: 992px) {
     margin-top: 2.4rem;
   }
+
   @media (max-width: 480px) {
     margin-top: 0;
   }
-  &__item{
+
+  &__item {
     margin-right: 1rem;
     display: flex;
     border-radius: 0.3rem;
     border: $border-active;
     margin-top: 2rem;
-    &:last-child{
+
+    &:last-child {
       margin-right: 0;
     }
   }
- &__link{
-   border-top-left-radius: 0.3rem;
-   border-bottom-left-radius: 0.3rem;
-   font-weight: bold;
-   border-right: $border-active;
-   vertical-align: middle;
-   color: $baltic-sea;
-   background-color: $bg-color-grey;
-   text-decoration: none;
-   @include active-button;
- }
-  &__svg{
+
+  &__link {
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    font-weight: bold;
+    border-right: $border-active;
+    vertical-align: middle;
+    color: $baltic-sea;
+    background-color: $bg-color-grey;
+    text-decoration: none;
+    @include active-button;
+  }
+
+  &__svg {
     vertical-align: middle;
   }
-  &__numder{
+
+  &__numder {
     @include active-button;
   }
 }

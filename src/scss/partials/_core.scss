@@ -2,7 +2,13 @@
 @import "mixin";
 @import "variables";
 @import "template";
+@import "mixin";
+@import "btns";
+
+// TEMPLATES
 @import "header";
+@import "hero";
+@import "about";
 @import "revolutionary";
 @import "what-you-get";
 @import "pricing";

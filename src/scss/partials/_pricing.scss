@@ -1,117 +1,144 @@
-.price{
-  background: linear-gradient(45deg, rgba(74,49,79,0.8), rgba(74,49,79, 0.8)), url(/../assets/img/bg-prise.png) no-repeat;
+.price {
+  background: linear-gradient(45deg, rgba(74, 49, 79, 0.8), rgba(74, 49, 79, 0.8)), url(/../assets/img/bg-prise.png) no-repeat;
   background-size: cover;
   background-position: center center;
   padding-top: 8.8rem;
   padding-bottom: 9rem;
+
   @media (max-width: 648px) {
     padding-bottom: 3rem;
     padding-top: 1.4rem;
     background: $bg-color-prise;
   }
-  &__title{
+
+  &__title {
+    font-family: $primeFont;
     font-weight: bold;
     font-size: 4.8rem;
     text-align: center;
     color: $white;
+
     @media (max-width:1130px) {
       font-size: 4.2rem;
     }
+
     @media (max-width:648px) {
       font-size: 2.8rem;
     }
   }
 }
 
-.card{
+.card {
   margin-top: 6.1rem;
   display: grid;
   grid-template-columns: 25.7rem 25.7rem 30rem 25.7rem;
   grid-column-gap: 0.5rem;
+
   @media (max-width:1130px) {
     margin-top: 0;
     grid-template-columns: 300px 300px;
-    justify-content:center;
+    justify-content: center;
     grid-row-gap: 3rem;
   }
+
   @media (max-width:648px) {
     grid-template-columns: 300px;
-    justify-content:center;
+    justify-content: center;
     grid-row-gap: 1.7rem;
     margin-top: 3rem;
   }
-  &__item{
+
+  &__item {
     width: 25.6rem;
     margin-top: 5rem;
     height: 46rem;
-    background: rgba(255,255 ,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
     @media (max-width:1130px) {
       justify-self: end;
     }
+
     @media (max-width:648px) {
       margin-top: 0;
       justify-self: center;
     }
   }
-  &__title{
+
+  &__title {
     font-size: 2.4rem;
     @include uppercase-center-text;
     color: $white;
-    background: rgba(255,255 ,255,0.06);
+    background: rgba(255, 255, 255, 0.06);
     padding: 3.6rem 0;
     width: 100%;
+    font-family: $primeFont;
+
   }
-  &__prise{
+
+  &__prise {
     font-size: 6rem;
     @include uppercase-center-text;
     color: $white;
     font-weight: bold;
-    &:after{
+    font-family: $primeFont;
+
+
+    &:after {
       margin: 3.8rem auto 0;
       content: "";
       display: block;
       width: 6rem;
-      border:1px solid $lavender-purple;
+      border: 1px solid $lavender-purple;
     }
   }
+
   &__period {
     margin-top: 2rem;
     display: block;
     font-size: 1.4rem;
+    font-family: $primeFont;
+
     @include uppercase-center-text;
   }
 
-  &__disc{
+  &__disc {
     padding: 0 0.5rem;
     font-size: 1.6rem;
     text-align: center;
     color: $white;
+    font-family: $primeFont;
+
   }
-  &__buy{
+
+  &__buy {
     margin-bottom: 3.7rem;
     text-decoration: none;
-    background: rgba(255,255 ,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 2.5rem;
     font-size: 1.5rem;
     @include uppercase-center-text;
     color: $white;
+    font-family: $primeFont;
+
     padding: 1.5rem 3.7rem;
   }
 }
 
-.active{
+.active {
   width: 30rem;
   margin-top: 0;
   height: 56rem;
   background-color: rgba(70, 48, 72, 0.84);
-  &__title{
+
+  &__title {
     padding: 4.3rem 0;
   }
-  &__prise{
+
+  &__prise {
     font-size: 8rem;
 
   }

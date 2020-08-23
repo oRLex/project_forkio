@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,200,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/styles.min.css">
   <title>Document</title>
 </head>
+
 <body>
-  <header>
-    @@include('./src/templates/header.html')
-  </header>
+  <div class="hero-bg">
+    <header>
+      @@include('./src/templates/header.html')
+    </header>
+    @@include('./src/templates/hero.html')
+  </div>
+  <span class="hero__trial">Unlimited 30-Days Trial Period</span>
 
   <main>
     @@include('./src/templates/revolutionary.html')
@@ -20,4 +28,5 @@
 
   <script src="js/scripts.min.js"></script>
 </body>
+
 </html>

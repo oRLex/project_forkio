@@ -1,0 +1,23 @@
+%btn {
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.btn__prime {
+  @extend %btn;
+  border: 0.1rem solid $lavender-purple;
+  background-color: $lavender-purple;
+  border-radius: 2rem;
+  font-family: $primeFont;
+
+  &:hover {
+    background-color: #fff;
+    color: $lavender-purple;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 15px;
+  }
+}
