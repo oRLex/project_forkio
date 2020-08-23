@@ -1,22 +1,27 @@
-.header{ 
+.header {
   margin-top: 3.1rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  &__logo{
+
+  &__logo {
     text-decoration: none;
     display: flex;
     align-items: center;
-    &:hover{
-      .header__logo-img{
+    font-family: $secondFont;
+
+    &:hover {
+      .header__logo-img {
         background-image: url("/assets/icons/logo-hover 1.png");
       }
-      .header__logo-name{
+
+      .header__logo-name {
         color: #ffffff;
       }
     }
   }
-  &__logo-img{
+
+  &__logo-img {
     margin-right: 1.7rem;
     width: 4.3rem;
     height: 4.1rem;
@@ -25,110 +30,142 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  &__logo-name{
+
+  &__logo-name {
     font-size: 2.4rem;
     text-transform: uppercase;
     color: $lavender-purple;
     font-weight: bold;
   }
-  
 
-    .menu{
-      flex-grow: 1;
-      display: flex;
-      justify-content: flex-end;
+
+  .menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4.8rem;
+
+    &__item {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: $lavender-purple;
+      text-decoration: none;
       margin-right: 4.8rem;
-      &__item{
-        font-size: 1.6rem;
-        font-weight: bold;
-        color: $lavender-purple;
-        text-decoration: none;
-        margin-right: 4.8rem;
-        &:hover{
-          color: #ffffff; 
-        }
-        &:last-child{
-          margin-right: 0;
-        }
+      font-family: $primeFont;
+
+      &:hover {
+        color: #ffffff;
       }
-      &__btn--toggle{
-        display: none;
+
+      &:last-child {
+        margin-right: 0;
       }
     }
-  
-  &__btn{
+
+    &__btn--toggle {
+      display: none;
+    }
+  }
+
+  &__btn {
     padding: 0.8rem 2.5rem;
   }
 }
 
 
-@media (max-width: 843px){
-  header{
+@media (max-width: 882px) {
+  header {
     background-color: $baltic-sea;
     position: relative;
   }
-  .header{
+
+  .header {
     margin-top: 0;
     padding-top: 2.4rem;
     padding-bottom: 2.4rem;
     justify-content: space-between;
     flex-wrap: wrap;
-    .menu{
+
+    .menu {
       flex: 1 0 100%;
       order: 4;
       justify-content: center;
-      &__item{
+
+      &__item {
         margin-right: 2rem;
       }
     }
   }
 }
 
-@media (max-width: 740px){
-  .header{
+@media (max-width: 740px) {
+  .header {
     flex-wrap: nowrap;
-    &__logo-name{
+
+    &__logo-name {
       display: none;
     }
-    .menu{
+
+    .menu {
       display: none;
       position: absolute;
-      bottom: -23.3rem;
-      left: 0;
-      // transform: translateX(-50%);
-      width: 100%;
-      padding: 0 1rem;
+      top: 100%;
+      left: 0.5rem;
+      width: calc(100% - 1rem);
+      margin: 0 auto;
       text-align: left;
       background-color: #333333;
-      &.active{
+
+      &.active {
         display: block;
         z-index: 12;
       }
-      &__btn--toggle{
+
+      &__btn--toggle {
         display: block;
         background-image: url("/assets/icons/hamburger.svg");
-        width: 2.6rem;height: 2.1rem;
+        width: 2.6rem;
+        height: 2.1rem;
         order: 3;
       }
-      &__item{
+
+      &__item {
         margin-right: 0;
         display: block;
         width: 100%;
         color: #ffffff;
         line-height: 5.3rem;
         font-size: 2.6rem;
-        border-bottom: 0.3rem solid #3B3B3B;
-        border-top: 0.3rem solid #3B3B3B;
-        &:first-child{
-          border-top: 0;
+        border-bottom: 0.2rem solid #3B3B3B;
+        border-top: 0.2rem solid #3B3B3B;
+        padding-top: 1.9rem;
+        padding-bottom: 1.6rem;
+
+        &:hover>span::before {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          left: 0;
+          top: 0;
+          width: 0.8rem;
+          height: 100%;
+          margin-left: 0.2rem;
+          background-color: $lavender-purple;
         }
-        &:hover{
-          color: $lavender-purple;
-          border-left: 0.8rem solid $lavender-purple;
+
+        span {
+          display: inline-block;
+          position: relative;
+          padding-left: 3.5rem;
+        }
+
+        &:first-child {
+          border-top: 0;
         }
       }
     }
-    &__btn{
+
+    &__btn {
       order: 2;
     }
   }
