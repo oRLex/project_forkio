@@ -35,8 +35,8 @@ const path = {
 };
 
 
-const del = function(){
- return  delFolder.sync([path.dest.server]);
+const del = function () {
+  return delFolder.sync([path.dest.server]);
 };
 
 const serve = function () {
@@ -74,39 +74,39 @@ const minifyIcons = function () {
 
 const sassDev = function () {
   return src(path.src.styles + "/**/*.scss")
-  .pipe(sourcemaps.init())
-  .pipe(sass({
-    outputStyle: "compressed"
-  }).on("error", sass.logError))
-  .pipe(autoprefixer({
-    browsers: ['last 2 versions'],
-    cascade: false
-  }))
-  .pipe(concat('styles.min.css'))
-  .pipe(cleanCSS())
-  .pipe(dest(path.dest.styles));
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      outputStyle: "compressed"
+    }).on("error", sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(concat('styles.min.css'))
+    .pipe(cleanCSS())
+    .pipe(dest(path.dest.styles));
 };
 
-const sassProd = function(){
+const sassProd = function () {
   return src(path.src.styles + "/**/*.scss")
-  .pipe(sass({
-    outputStyle: "compressed"
-  }).on("error", sass.logError))
-  .pipe(autoprefixer({
-    browsers: ['last 2 versions'],
-    cascade: false
-  }))
-  .pipe(concat('styles.min.css'))
-  .pipe(dest(path.dest.styles));
+    .pipe(sass({
+      outputStyle: "compressed"
+    }).on("error", sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(concat('styles.min.css'))
+    .pipe(dest(path.dest.styles));
 };
 
-const htmlInclude = function(){
+const htmlInclude = function () {
   return src(['./index.html'])
-  .pipe(fileinclude({
-    prefix: '@@',
-    basepath: '@file'
-  }))
-  .pipe(dest(path.dest.server));
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(dest(path.dest.server));
 };
 
 const defaultTask = function () {
@@ -117,19 +117,18 @@ const defaultTask = function () {
   scriptsDev();
   serve();
 
-  watch(path.src.html +"/**/*.html").on('change', function () {
+  watch(path.src.html + "/**/*.html").on('change', function () {
     browserSync.reload();
   });
   watch(path.src.html + "/**/*.html").on('change', function () {
-      htmlInclude();
-      browserSync.reload();
-      console.log('watch html');
-    });
+    htmlInclude();
+    browserSync.reload();
+  });
 
   watch(path.src.html + "/**/*.html").on('change', function () {
-        htmlInclude();
-        browserSync.reload();
-      });
+    htmlInclude();
+    browserSync.reload();
+  });
 
   watch(path.src.styles + "/**/*.scss").on('change', function () {
     sassDev();
@@ -143,8 +142,9 @@ const defaultTask = function () {
 };
 
 
-const prodcutionTask = function(cb){
+const prodcutionTask = function (cb) {
   del();
+  htmlInclude();
   sassProd();
   scriptsProd();
   minifyImages();
