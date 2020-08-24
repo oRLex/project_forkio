@@ -1,5 +1,5 @@
 .price {
-  background: linear-gradient(45deg, rgba(74, 49, 79, 0.8), rgba(74, 49, 79, 0.8)), url(/../assets/img/bg-prise.png) no-repeat;
+  background: linear-gradient(45deg, rgba(75, 59, 78, 0.8), rgba(75, 59, 78, 0.8)), url(/../assets/img/bg-prise.png) no-repeat;
   background-size: cover;
   background-position: center center;
   padding-top: 8.8rem;
@@ -8,7 +8,7 @@
   @media (max-width: 648px) {
     padding-bottom: 3rem;
     padding-top: 1.4rem;
-    background: $bg-color-prise;
+    background: $purple;
   }
 
   &__title {
