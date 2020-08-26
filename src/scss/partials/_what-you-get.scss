@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
 
-  @media (max-width:1130px) {
+  @media (max-width:1200px) {
     padding-left: 0;
     justify-content: center;
     flex-wrap: wrap;
@@ -20,7 +20,7 @@
   }
 
   &__wrab-header {
-    @media (max-width:1130px) {
+    @media (max-width:1200px) {
       width: 100%;
       display: flex;
       justify-content: flex-end;
@@ -36,7 +36,7 @@
 
 
     &--left {
-      @media (max-width:1130px) {
+      @media (max-width:1200px) {
         display: none;
       }
     }
@@ -44,7 +44,7 @@
     &--top {
       display: none;
 
-      @media (max-width:1130px) {
+      @media (max-width:1200px) {
         margin-bottom: 5rem;
         display: block;
       }
@@ -66,7 +66,7 @@
   &__content-wrap {
     display: grid;
 
-    @media (max-width:1130px) {
+    @media (max-width:1200px) {
       margin: 0 auto;
       padding: 0 10px;
       max-width: 90.5rem;
