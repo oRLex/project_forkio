@@ -104,5 +104,9 @@ typings/
 
 
 # Package-lock
+.idea/**/*
+.xml
+.iml
 package-lock.json
+node_modules/**/*
 dist/**/*
