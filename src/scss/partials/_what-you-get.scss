@@ -4,14 +4,10 @@
   display: flex;
   justify-content: space-between;
 
-  @media (max-width:1200px) {
-    padding-left: 0;
+  @media (max-width:992px) {
+    padding-left: 3rem;
     justify-content: center;
     flex-wrap: wrap;
-  }
-
-  @media (max-width:992px) {
-
     background-color: transparent;
   }
 
@@ -20,7 +16,8 @@
   }
 
   &__wrab-header {
-    @media (max-width:1200px) {
+    width: 50%;
+    @media (max-width:992px) {
       width: 100%;
       display: flex;
       justify-content: flex-end;
@@ -34,9 +31,8 @@
     color: $lavender-purple;
     font-family: $primeFont;
 
-
     &--left {
-      @media (max-width:1200px) {
+      @media (max-width:992px) {
         display: none;
       }
     }
@@ -44,12 +40,9 @@
     &--top {
       display: none;
 
-      @media (max-width:1200px) {
+      @media (max-width:992px) {
         margin-bottom: 5rem;
         display: block;
-      }
-
-      @media (max-width:992px) {
         font-size: 4.2rem;
       }
 
@@ -60,13 +53,12 @@
   }
 
   &__img {
-    max-width: 70rem;
+    width: 70%;
   }
 
   &__content-wrap {
     display: grid;
-
-    @media (max-width:1200px) {
+    @media (max-width:992px) {
       margin: 0 auto;
       padding: 0 10px;
       max-width: 90.5rem;
