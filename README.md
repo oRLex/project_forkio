@@ -3,6 +3,8 @@
 
 :star::rocket: Simple responsive landing page.  
 
+Website: [link!](https://orlex.github.io/)
+
 ### List of using technologies
 1. HTML 5
 2. CSS 3
