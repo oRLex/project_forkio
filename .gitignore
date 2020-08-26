@@ -104,4 +104,6 @@ typings/
 
 
 # Package-lock
-/package-lock.json
+package-lock.json
+dist/**/*
+.idea/**/*
