@@ -5,7 +5,7 @@
   padding-top: 8.8rem;
   padding-bottom: 9rem;
 
-  @media (max-width: 648px) {
+  @media (max-width: 480px) {
     padding-bottom: 3rem;
     padding-top: 1.4rem;
     background: $purple;
@@ -18,11 +18,11 @@
     text-align: center;
     color: $white;
 
-    @media (max-width:1130px) {
+    @media (max-width:992px) {
       font-size: 4.2rem;
     }
 
-    @media (max-width:648px) {
+    @media (max-width:480px) {
       font-size: 2.8rem;
     }
   }
@@ -31,115 +31,98 @@
 .card {
   margin-top: 6.1rem;
   display: grid;
-  grid-template-columns: 25.7rem 25.7rem 30rem 25.7rem;
-  grid-column-gap: 0.5rem;
-
-  @media (max-width:1130px) {
-    margin-top: 0;
-    grid-template-columns: 300px 300px;
-    justify-content: center;
+  grid-template-columns: 1fr 1fr 1.25fr 1fr;
+  grid-column-gap: 1.5rem;
+  justify-content: center;
+  @media (max-width:992px) {
+    max-width: 60rem;
     grid-row-gap: 3rem;
+    margin: 3.9rem auto 0;
+    grid-template-columns: 1fr 1fr;
   }
-
-  @media (max-width:648px) {
-    grid-template-columns: 300px;
-    justify-content: center;
-    grid-row-gap: 1.7rem;
-    margin-top: 3rem;
-  }
-
-  &__item {
-    width: 25.6rem;
-    margin-top: 5rem;
-    height: 46rem;
-    background: rgba(255, 255, 255, 0.1);
+  @media (max-width:480px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-
-    @media (max-width:1130px) {
-      justify-self: end;
-    }
-
-    @media (max-width:648px) {
-      margin-top: 0;
-      justify-self: center;
-    }
   }
 
-  &__title {
+  &__item {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 47.5rem;
+   background-color: rgba(255,255,255, 0.1);
+    @media (max-width:992px) {
+      max-width: 27.5rem;
+    }
+    @media (max-width:480px) {
+      width: 27.5rem;
+    }
+  }
+  &__title{
+    padding: 3.6rem 0;
     font-size: 2.4rem;
     @include uppercase-center-text;
     color: $white;
-    background: rgba(255, 255, 255, 0.06);
-    padding: 3.6rem 0;
-    width: 100%;
-    font-family: $primeFont;
-
+    background-color: rgba(255,255,255, 0.06);
   }
 
   &__prise {
     font-size: 6rem;
     @include uppercase-center-text;
-    color: $white;
-    font-weight: bold;
-    font-family: $primeFont;
-
-
+    color:$white;
     &:after {
-      margin: 3.8rem auto 0;
+      border: 0.1rem solid $lavender-purple;
       content: "";
       display: block;
+      margin: 4.6rem auto 0 auto;
       width: 6rem;
-      border: 1px solid $lavender-purple;
     }
   }
 
-  &__period {
-    margin-top: 2rem;
+  &__period{
     display: block;
     font-size: 1.4rem;
-    font-family: $primeFont;
-
     @include uppercase-center-text;
+    color: $white;
+
   }
 
   &__disc {
-    padding: 0 0.5rem;
+    padding: 0 1.5rem ;
     font-size: 1.6rem;
     text-align: center;
     color: $white;
-    font-family: $primeFont;
-
   }
 
   &__buy {
-    margin-bottom: 3.7rem;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     @include uppercase-center-text;
     color: $white;
-    font-family: $primeFont;
+    padding: 1.8rem 4.6rem;
+    text-decoration: none;
+    background-color: rgba(255,255,255, 0.1);
+    display: inline-block;
+    border-radius: 3rem;
+    margin-bottom:3.9rem;
+    margin-right: auto;
+    margin-left: auto;
 
-    padding: 1.5rem 3.7rem;
   }
+
 }
 
-.active {
-  width: 30rem;
-  margin-top: 0;
-  height: 56rem;
-  background-color: rgba(70, 48, 72, 0.84);
-
-  &__title {
-    padding: 4.3rem 0;
+.active{
+  height: 54rem;
+  background-color: rgba(70, 48, 72, 0.7);
+  @media (max-width:992px) {
+    max-width: 30rem;
   }
-
-  &__prise {
-    font-size: 8rem;
-
+  @media (max-width:480px) {
+    width: 30rem;
+  }
+  &__prise{
+    font-size: 8.2rem;
   }
 }

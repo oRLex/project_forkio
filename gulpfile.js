@@ -152,5 +152,5 @@ const prodcutionTask = function (cb) {
   cb();
 };
 
-exports.default = defaultTask;
-exports.prod = prodcutionTask;
+exports.dev = defaultTask;
+exports.build = prodcutionTask;
