@@ -1,7 +1,8 @@
 const {
   src,
   dest,
-  watch
+  watch,
+  series
 } = require('gulp');
 const delFolder = require('del');
 const sass = require("gulp-sass");
@@ -35,8 +36,10 @@ const path = {
 };
 
 
-const del = function () {
+const del = function (cd) {
+    cd()
   return delFolder.sync([path.dest.server]);
+
 };
 
 const serve = function () {
@@ -49,30 +52,34 @@ const serve = function () {
   });
 };
 
-const scriptsDev = function () {
+const scriptsDev = function (cb) {
   return src(path.src.server + '/**/*.js')
     .pipe(concat('scripts.min.js'))
     .pipe(dest(path.dest.js));
+    cb();
 };
-const scriptsProd = function () {
+const scriptsProd = function (cb) {
   return src(path.src.server + '/**/*.js')
     .pipe(jsMinify())
     .pipe(concat('scripts.min.js'))
     .pipe(dest(path.dest.js));
+    cb();
 };
 
-const minifyImages = function () {
+const minifyImages = function (cb) {
   return src(path.src.img + '/*')
     .pipe(imagemin())
     .pipe(dest(path.dest.img));
+    cb();
 };
-const minifyIcons = function () {
+const minifyIcons = function (cb) {
   return src(path.src.icons + '/*')
     .pipe(imagemin())
     .pipe(dest(path.dest.icons));
+    cb();
 };
 
-const sassDev = function () {
+const sassDev = function (cb) {
   return src(path.src.styles + "/**/*.scss")
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -85,9 +92,10 @@ const sassDev = function () {
     .pipe(concat('styles.min.css'))
     .pipe(cleanCSS())
     .pipe(dest(path.dest.styles));
+    cb();
 };
 
-const sassProd = function () {
+const sassProd = function (cb) {
   return src(path.src.styles + "/**/*.scss")
     .pipe(sass({
       outputStyle: "compressed"
@@ -98,59 +106,42 @@ const sassProd = function () {
     }))
     .pipe(concat('styles.min.css'))
     .pipe(dest(path.dest.styles));
+    cb();
 };
 
-const htmlInclude = function () {
+const htmlInclude = function (cb) {
   return src(['./index.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
     .pipe(dest(path.dest.server));
+    cb();
 };
 
-const defaultTask = function () {
-  htmlInclude();
-  minifyImages();
-  minifyIcons();
-  sassDev();
-  scriptsDev();
-  serve();
+const watchers = function () {
 
-  watch(path.src.html + "/**/*.html").on('change', function () {
-    browserSync.reload();
+  watch(path.src.html + "/**/*.html", function (cb) {
+        browserSync.reload();
+        cb();
+    });
+  watch(path.src.html + "/**/*.html", function () {
+            htmlInclude();
+            browserSync.reload();
+          cb();
+      });
+  watch(path.src.styles + "/**/*.scss", function (cb) {
+             sassDev();
+             browserSync.reload();
+             cb();
   });
-  watch(path.src.html + "/**/*.html").on('change', function () {
-    htmlInclude();
-    browserSync.reload();
-  });
+  watch(path.src.js + "/**/*.js", function (cb) {
+           scriptsDev();
+           browserSync.reload();
+          cb();
+      });
 
-  watch(path.src.html + "/**/*.html").on('change', function () {
-    htmlInclude();
-    browserSync.reload();
-  });
-
-  watch(path.src.styles + "/**/*.scss").on('change', function () {
-    sassDev();
-    browserSync.reload();
-  });
-
-  watch(path.src.js + "/**/*.js").on('change', function () {
-    scriptsDev();
-    browserSync.reload();
-  });
 };
 
-
-const prodcutionTask = function (cb) {
-  del();
-  htmlInclude();
-  sassProd();
-  scriptsProd();
-  minifyImages();
-  minifyIcons();
-  cb();
-};
-
-exports.dev = defaultTask;
-exports.build = prodcutionTask;
+exports.dev = series(serve, htmlInclude, sassDev, scriptsDev, minifyImages, minifyIcons, watchers);
+exports.build = series(del, htmlInclude, sassProd, scriptsProd, minifyImages, minifyIcons);
