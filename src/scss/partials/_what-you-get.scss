@@ -5,7 +5,7 @@
   justify-content: space-between;
 
   @media (max-width:992px) {
-    padding-left: 3rem;
+    padding-left: 0;
     justify-content: center;
     flex-wrap: wrap;
     background-color: transparent;
@@ -66,7 +66,7 @@
     @media (max-width:992px) {
       margin: 0 auto;
       padding: 0 10px;
-      max-width: 90.5rem;
+      //max-width: 90.5rem;
     }
   }
 
@@ -75,7 +75,6 @@
     grid-template-columns: 11.5rem 1fr;
     grid-column-gap: 2.4rem;
     margin-bottom: 3.4rem;
-
     @media (max-width:480px) {
       @include item-center (align-items);
     }
