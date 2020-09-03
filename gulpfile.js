@@ -84,10 +84,18 @@ const minifyImages = function () {
     .pipe(dest(path.dest.img));
 };
 
-const minifyIcons = function () {
+const devImages = function () {
+  return src(path.src.img + '/*')
+    .pipe(dest(path.dest.img));
+};
 
+const minifyIcons = function () {
   return src(path.src.icons + '/*')
     .pipe(imagemin())
+    .pipe(dest(path.dest.icons));
+};
+const devIcons = function () {
+  return src(path.src.icons + '/*')
     .pipe(dest(path.dest.icons));
 };
 
@@ -133,4 +141,4 @@ const htmlInclude = function () {
 
 exports.build = series(del, minifyImages, minifyIcons, htmlInclude, sassProd, scriptsProd);
 
-exports.dev = series(parallel(minifyImages, minifyIcons), sassDev, scriptsDev, htmlInclude, serve);
+exports.dev = series(parallel(devImages, devIcons), sassDev, scriptsDev, htmlInclude, serve);
