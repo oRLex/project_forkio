@@ -69,6 +69,7 @@
   }
 
   &__prise {
+    font-weight: bold;
     font-size: 6rem;
     @include uppercase-center-text;
     color:$white;
@@ -79,6 +80,10 @@
       margin: 4.6rem auto 0 auto;
       width: 6rem;
     }
+    &:before {
+      content: "\0024";
+      font-weight: normal;
+    }
   }
 
   &__period{
@@ -86,6 +91,7 @@
     font-size: 1.4rem;
     @include uppercase-center-text;
     color: $white;
+    margin-top: 3.8rem;
 
   }
 
@@ -108,7 +114,6 @@
     margin-bottom:3.9rem;
     margin-right: auto;
     margin-left: auto;
-
   }
 
 }
